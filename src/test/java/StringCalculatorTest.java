@@ -15,9 +15,9 @@ public class StringCalculatorTest {
         Assert.assertEquals(1, stringCalculator.add("1"));
     }
 
-//    @Test
-//    public void testStringWithTwoNumber() {
-//        StringCalculator stringCalculator = new StringCalculator();
-//        Assert.assertEquals(11, stringCalculator.add("5,6"));
-//    }
+    @Test
+    public void testStringWithTwoNumber() {
+        StringCalculator stringCalculator = new StringCalculator();
+        Assert.assertEquals(11, stringCalculator.add("5,6"));
+    }
 }
