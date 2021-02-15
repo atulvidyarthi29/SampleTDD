@@ -38,4 +38,10 @@ public class StringCalculatorTest {
         StringCalculator stringCalculator = new StringCalculator();
         Assert.assertEquals(17, stringCalculator.add("//;\n1;2;5\n9"));
     }
+
+    @Test(expected = Exception.class)
+    public void testStringWithNegativeNumbers() {
+        StringCalculator stringCalculator =  new StringCalculator();
+        stringCalculator.add("//;\n1;2;-5\n9");
+    }
 }
