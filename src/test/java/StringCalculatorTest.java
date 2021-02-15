@@ -26,4 +26,10 @@ public class StringCalculatorTest {
         StringCalculator stringCalculator = new StringCalculator();
         Assert.assertEquals(55, stringCalculator.add("1,2,3,4,5,6,7,8,9,10"));
     }
+
+    @Test
+    public void testNewLineSupport() {
+        StringCalculator stringCalculator = new StringCalculator();
+        Assert.assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
 }
