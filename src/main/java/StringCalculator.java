@@ -1,6 +1,6 @@
 public class StringCalculator {
 
-    int count;
+    static int count;
 
     public int add(String str) throws Exception {
         count++;

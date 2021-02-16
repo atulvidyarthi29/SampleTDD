@@ -1,6 +1,5 @@
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class StringCalculatorTest {
@@ -11,6 +10,7 @@ public class StringCalculatorTest {
     public void setUp() {
         stringCalculator = new StringCalculator();
     }
+
 
     @Test
     public void testEmptyString() throws Exception {
