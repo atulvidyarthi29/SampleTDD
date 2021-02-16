@@ -50,4 +50,10 @@ public class StringCalculatorTest {
         StringCalculator stringCalculator = new StringCalculator();
         stringCalculator.add("//;\n1;-2;-5\n-9");
     }
+
+    @Test
+    public void testFunctionCount() {
+        StringCalculator stringCalculator = new StringCalculator();
+        Assert.assertEquals(8, stringCalculator.getCalledCount());
+    }
 }
