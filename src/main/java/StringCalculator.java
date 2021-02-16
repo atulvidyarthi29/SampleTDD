@@ -1,5 +1,5 @@
 public class StringCalculator {
-    public int add(String str) {
+    public int add(String str) throws Exception {
         if (str.length() == 0) return 0;
 
         String delimiter = ",";
@@ -11,6 +11,9 @@ public class StringCalculator {
         str = str.replace("\n", delimiter);
         int sum = 0;
         String[] numbers = str.split(delimiter);
+
+        for(String num: numbers)
+            if(num.charAt(0) == '-') throw new Exception("Negatives not allowed");
 
         for (String num : numbers)
             sum += Integer.parseInt(num);
