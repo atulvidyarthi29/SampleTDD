@@ -44,4 +44,10 @@ public class StringCalculatorTest {
         StringCalculator stringCalculator = new StringCalculator();
         stringCalculator.add("//;\n1;2;-5\n9");
     }
+
+    @Test(expected = Exception.class)
+    public void testStringWithMultipleNegativeNumbers() throws Exception {
+        StringCalculator stringCalculator = new StringCalculator();
+        stringCalculator.add("//;\n1;-2;-5\n-9");
+    }
 }
