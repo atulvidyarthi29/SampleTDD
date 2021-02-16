@@ -56,4 +56,9 @@ public class StringCalculatorTest {
     public void testFunctionCount() {
         Assert.assertEquals(8, stringCalculator.getCalledCount());
     }
+
+    @Test
+    public void testIgnoringTheNumbersGreaterThan1000() throws Exception {
+        Assert.assertEquals(2, stringCalculator.add("2,1001"));
+    }
 }
