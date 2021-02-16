@@ -1,4 +1,7 @@
 public class StringCalculator {
+
+    int count;
+
     public int add(String str) throws Exception {
         if (str.length() == 0) return 0;
 
@@ -23,5 +26,9 @@ public class StringCalculator {
             sum += Integer.parseInt(num);
 
         return sum;
+    }
+
+    public int getCalledCount() {
+        return count;
     }
 }
