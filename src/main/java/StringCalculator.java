@@ -13,7 +13,10 @@ public class StringCalculator {
         String[] numbers = str.split(delimiter);
 
         for(String num: numbers)
-            if(num.charAt(0) == '-') throw new Exception("Negatives not allowed");
+            if(num.charAt(0) == '-') {
+                System.out.println("Negatives not allowed. Found " + num);
+                throw new Exception("Negatives not allowed");
+            }
 
         for (String num : numbers)
             sum += Integer.parseInt(num);

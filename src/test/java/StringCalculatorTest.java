@@ -40,7 +40,7 @@ public class StringCalculatorTest {
     }
 
     @Test(expected = Exception.class)
-    public void testStringWithNegativeNumbers() throws Exception {
+    public void testStringWithOneNegativeNumbers() throws Exception {
         StringCalculator stringCalculator = new StringCalculator();
         stringCalculator.add("//;\n1;2;-5\n9");
     }
