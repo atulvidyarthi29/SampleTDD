@@ -3,6 +3,7 @@ public class StringCalculator {
     int count;
 
     public int add(String str) throws Exception {
+        count++;
         if (str.length() == 0) return 0;
 
         String delimiter = ",";
