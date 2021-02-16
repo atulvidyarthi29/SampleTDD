@@ -61,4 +61,9 @@ public class StringCalculatorTest {
     public void testIgnoringTheNumbersGreaterThan1000() throws Exception {
         Assert.assertEquals(2, stringCalculator.add("2,1001"));
     }
+
+    @Test
+    public void testDelimitersOfVariableLength() throws Exception {
+        Assert.assertEquals(5, stringCalculator.add("//[***]\\n1***2***3"));
+    }
 }
