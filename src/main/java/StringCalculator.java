@@ -23,8 +23,10 @@ public class StringCalculator {
             }
         if (neg.length() > 0) throw new Exception("Negatives not allowed. Found " + neg);
 
-        for (String num : numbers)
-            sum += Integer.parseInt(num);
+        for (String num : numbers) {
+            int intValue = Integer.parseInt(num);
+            sum += (intValue>1000)? 0: intValue;
+        }
 
         return sum;
     }
