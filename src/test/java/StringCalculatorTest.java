@@ -5,12 +5,12 @@ import org.junit.Test;
 public class StringCalculatorTest {
 
     StringCalculator stringCalculator;
+    int testCount;
 
     @Before
     public void setUp() {
         stringCalculator = new StringCalculator();
     }
-
 
     @Test
     public void testEmptyString() throws Exception {
@@ -54,7 +54,7 @@ public class StringCalculatorTest {
 
     @Test
     public void testFunctionCount() {
-        Assert.assertEquals(8, stringCalculator.getCalledCount());
+        Assert.assertEquals(testCount, stringCalculator.getCalledCount());
     }
 
     @Test
@@ -65,5 +65,15 @@ public class StringCalculatorTest {
     @Test
     public void testDelimitersOfVariableLength() throws Exception {
         Assert.assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
+    }
+
+    @Test
+    public void testMultipleDelimiters() throws Exception {
+        Assert.assertEquals(6, stringCalculator.add("//[*][%]\n1*2%3"));
+    }
+
+    @Test
+    public void testMultipleDelimiterWithVariableLength() throws Exception {
+        Assert.assertEquals(6, stringCalculator.add("//[**][%*%*]\n1**2%*%*3"));
     }
 }

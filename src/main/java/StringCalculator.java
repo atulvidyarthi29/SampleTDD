@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -36,18 +35,17 @@ public class StringCalculator {
         Set<String> delimiters = new HashSet<>();
         String i = str;
 
-        while(i.contains("[")){
+        while (i.contains("[")) {
             int startIndex = i.indexOf("[");
             int endIndex = i.indexOf("]");
-            delimiters.add(i.substring(startIndex+1, endIndex));
-            i = i.substring(endIndex+1);
+            delimiters.add(i.substring(startIndex + 1, endIndex));
+            i = i.substring(endIndex + 1);
         }
-        System.out.println(delimiters);
 
-        str = str.substring(str.indexOf('\n')+1);
+        str = str.substring(str.indexOf('\n') + 1);
 
 
-        for(String delimiter: delimiters){
+        for (String delimiter : delimiters) {
             str = str.replaceAll(delimiter, ",");
         }
 
@@ -56,16 +54,15 @@ public class StringCalculator {
 
     private String[] tokenize(String str) {
         str = removeWildCardCharacters(str);
-        if(!str.startsWith("//")) {
+        if (!str.startsWith("//")) {
             str = str.replaceAll("\n", ",");
             return str.split(",");
         }
-        if(!str.substring(0, str.indexOf("\n")).contains("[")) {
-            String newDelimiter = str.substring(2,3);
-            str = str.substring(str.indexOf("\n")+1);
+        if (!str.substring(0, str.indexOf("\n")).contains("[")) {
+            String newDelimiter = str.substring(2, 3);
+            str = str.substring(str.indexOf("\n") + 1);
             str = str.replaceAll("\n", newDelimiter);
-            System.out.println(str);
-            return str.substring(str.indexOf("\n")+1).split(newDelimiter);
+            return str.substring(str.indexOf("\n") + 1).split(newDelimiter);
         }
         return processMultipleDelimiter(str);
     }
