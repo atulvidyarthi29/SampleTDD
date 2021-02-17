@@ -64,6 +64,6 @@ public class StringCalculatorTest {
 
     @Test
     public void testDelimitersOfVariableLength() throws Exception {
-        Assert.assertEquals(5, stringCalculator.add("//[***]\\n1***2***3"));
+        Assert.assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
     }
 }
